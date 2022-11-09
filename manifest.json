@@ -1,0 +1,14 @@
+{
+  "name": "Logseq Quick Capture",
+  "version": "0.0.1",
+  "description": "Quick capture for Logseq",
+  "manifest_version": 3,
+  "author": "hkgnp",
+  "action": {
+    "default_popup": "src/index.html",
+    "default_title": "Logseq Quick Capture"
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
