@@ -1,8 +1,17 @@
-chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
-  let url = tabs[0].url;
-  // use `url` here inside the callback because it's asynchronous!
-  let title = tabs[0].title;
+(async () => {
+  const [tab] = await chrome.tabs.query({
+    active: true,
+    lastFocusedWindow: true,
+  });
+
+  const [{ result }] = await chrome.scripting.executeScript({
+    target: { tabId: tab.id },
+    function: () => getSelection().toString(),
+  });
+
   window.open(
-    `logseq://x-callback-url/quickCapture?url=${url}/&title=${title}`
+    `logseq://x-callback-url/quickCapture?url=${tab.url}&title=${
+      tab.title
+    }&content=${result ? result : ""}`
   );
-});
+})();
