@@ -1,6 +1,6 @@
 # Overview
 
-Simple Chrome extension that makes use of the `quickCapture` from the `x-callback-url` to quickly capture the tab url and title that you are browsing to Logseq. Also supports capturing highlighted text.
+Simple Chrome extension that makes use of the `quickCapture` from the `x-callback-url` to quickly capture the tab url and title that you are browsing to Logseq. Also supports capturing highlighted text and images.
 
 # Screenshots
 
