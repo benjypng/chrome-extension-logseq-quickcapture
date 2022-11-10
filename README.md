@@ -4,9 +4,7 @@ Simple Chrome extension that makes use of the `quickCapture` from the `x-callbac
 
 # Screenshots
 
-![](/screenshots/logseq-quickcapture-1.png)
-
-![](/screenshots/logseq-quickcapture-2.png)
+![](/screenshots/logseq-quickcapture.mov)
 
 # Installing
 
