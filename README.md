@@ -15,3 +15,5 @@ Simple Chrome extension that makes use of the `quickCapture` from the `x-callbac
 # Credits
 
 [andelf](https://github.com/logseq/logseq/pull/5721)
+
+[Turndown](https://github.com/mixmark-io/turndown)
