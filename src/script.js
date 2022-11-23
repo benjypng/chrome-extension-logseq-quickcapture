@@ -1107,8 +1107,8 @@
   const { append } = await chrome.storage.sync.get(["append"]);
 
   window.open(
-    `logseq://x-callback-url/quickCapture?url=${tab.url}&title=${
+    `logseq://x-callback-url/quickCapture?page=${page}&append=${append}&title=${
       tab.title
-    }&content=${result ? result : ""}&page=${page}&append=${append}`
+    }&content=${result ? result : ""}&url=${tab.url}`
   );
 })();
