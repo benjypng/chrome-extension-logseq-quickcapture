@@ -14,8 +14,10 @@
     "default_popup": "src/index.html",
     "default_title": "Logseq Quick Capture"
   },
+  "options_page": "src/options.html",
   "permissions": [
     "scripting",
-    "activeTab"
+    "activeTab",
+    "storage"
   ]
 }
