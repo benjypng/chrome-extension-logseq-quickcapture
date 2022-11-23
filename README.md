@@ -12,6 +12,13 @@ Simple Chrome extension that makes use of the `quickCapture` from the `x-callbac
 2. Go to Chrome -> Manage Extensions -> Load unpacked.
 3. Select the folder that the repository was cloned to in step 1.
 
+# Customising Keyboard Shortcuts
+
+Chrome (or other Chrome-based browsers) now supports customising keyboard shortcuts natively. [See this Google search results page](https://www.google.com/search?q=define+hotkey+for+chrome+extension).
+
+- Chrome: Navigate to your Extensions page. Click the hamburger menu in the top left-hand corner and choose "Keyboard Shortcuts".
+- Brave: Navigate to `brave://settings`. Go to "Extensions" in the left hand menu, and then scroll to the bottom of the page and select "Keyboard Shortcuts".
+
 # Credits
 
 [andelf](https://github.com/logseq/logseq/pull/5721)
