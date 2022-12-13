@@ -1109,6 +1109,6 @@
   window.open(
     `logseq://x-callback-url/quickCapture?page=${page}&append=${append}&title=${
       tab.title
-    }&content=${result ? result : ""}&url=${tab.url}`
+    }&content=${result ? result : ""}&url=${encodeURIComponent(tab.url)}`
   );
 })();
