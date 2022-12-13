@@ -2,11 +2,17 @@
 
 Simple Chrome extension that makes use of the `quickCapture` from the `x-callback-url` to quickly capture the tab url and title that you are browsing to Logseq. Also supports capturing highlighted text and images.
 
+Customisation options can be found within the extension options.
+
 # Screenshots
 
 ![](/screenshots/logseq-quickcapture.gif)
 
 # Installing
+
+1. Install from the [Chrome Web Store](https://chrome.google.com/webstore/detail/logseq-quick-capture/hdpmdgiddmjppbeahnglgagndmahlanc)
+
+### To install it manually
 
 1. `git clone https://github.com/hkgnp/chrome-extension-logseq-quickcapture.git`
 2. Go to Chrome -> Manage Extensions -> Load unpacked.
