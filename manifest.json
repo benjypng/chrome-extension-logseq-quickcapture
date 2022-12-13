@@ -1,6 +1,6 @@
 {
   "name": "Logseq Quick Capture",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Quick capture for Logseq",
   "icons": {
     "16": "icons/icon16.png",
