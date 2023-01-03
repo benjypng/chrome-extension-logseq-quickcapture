@@ -3,13 +3,9 @@ function save_options() {
   let page = document.getElementById("page").value;
   const append = document.getElementById("append").value;
 
-  if (page === "today") {
-    page = "TODAY";
-  }
-
   chrome.storage.sync.set(
     {
-      page: page,
+      page: page === "today" ? "TODAY" : page,
       append: append,
     },
     function () {
@@ -29,7 +25,7 @@ function restore_options() {
   // Use default value color = 'red' and likesColor = true.
   chrome.storage.sync.get(
     {
-      page: "today",
+      page: "TODAY",
       append: "true",
     },
     function (items) {
