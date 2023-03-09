@@ -1106,9 +1106,16 @@
   const { page } = await chrome.storage.sync.get(["page"]);
   const { append } = await chrome.storage.sync.get(["append"]);
 
-  window.open(
-    `logseq://x-callback-url/quickCapture?page=${page}&append=${append}&title=${
+  let url;
+  if (page === "cursor") {
+    url = `logseq://x-callback-url/quickCapture?page=""&append=false&title=${
       tab.title
-    }&content=${result ? result : ""}&url=${encodeURIComponent(tab.url)}`
-  );
+    }&content=${result ? result : ""}&url=${encodeURIComponent(tab.url)}`;
+  } else {
+    url = `logseq://x-callback-url/quickCapture?page=${page}&append=${append}&title=${
+      tab.title
+    }&content=${result ? result : ""}&url=${encodeURIComponent(tab.url)}`;
+  }
+
+  window.open(url);
 })();
