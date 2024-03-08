@@ -501,7 +501,7 @@
             if (filter.call(rule, node, options)) return true;
           } else {
             throw new TypeError(
-              "`filter` needs to be a string, array, or function"
+              "`filter` needs to be a string, array, or function",
             );
           }
         }
@@ -721,7 +721,7 @@
               // Wrapping in a custom element ensures elements are reliably arranged in
               // a single element.
               '<x-turndown id="turndown-root">' + input + "</x-turndown>",
-              "text/html"
+              "text/html",
             );
             root = doc.getElementById("turndown-root");
           } else {
@@ -793,7 +793,7 @@
 
         function edgeWhitespace(string) {
           var m = string.match(
-            /^(([ \t\r\n]*)(\s*))[\s\S]*?((\s*?)([ \t\r\n]*))$/
+            /^(([ \t\r\n]*)(\s*))[\s\S]*?((\s*?)([ \t\r\n]*))$/,
           );
           return {
             leading: m[1], // whole string for whitespace-only strings
@@ -896,7 +896,7 @@
             if (!canConvert(input)) {
               throw new TypeError(
                 input +
-                  " is not a string, or an element/document/fragment node."
+                  " is not a string, or an element/document/fragment node.",
               );
             }
 
@@ -921,7 +921,7 @@
               plugin(this);
             } else {
               throw new TypeError(
-                "plugin must be a Function or an Array of Functions"
+                "plugin must be a Function or an Array of Functions",
               );
             }
             return this;
@@ -1008,7 +1008,7 @@
 
               return join(output, replacement);
             },
-            ""
+            "",
           );
         }
 
@@ -1066,7 +1066,7 @@
           var s2 = trimLeadingNewlines(replacement);
           var nls = Math.max(
             output.length - s1.length,
-            replacement.length - s2.length
+            replacement.length - s2.length,
           );
           var separator = "\n\n".substring(0, nls);
 
@@ -1098,7 +1098,7 @@
       const turndownService = new TurndownService();
 
       return turndownService.turndown(
-        getSelection().getRangeAt(0).cloneContents()
+        getSelection().getRangeAt(0).cloneContents(),
       );
     },
   });
@@ -1108,13 +1108,13 @@
 
   let url;
   if (page === "cursor") {
-    url = `logseq://x-callback-url/quickCapture?page=""&append=false&title=${
-      tab.title
-    }&content=${result ? result : ""}&url=${encodeURIComponent(tab.url)}`;
+    url = `logseq://x-callback-url/quickCapture?page=""&append=false&title=${encodeURIComponent(
+      tab.title,
+    )}&content=${result ? result : ""}&url=${encodeURIComponent(tab.url)}`;
   } else {
-    url = `logseq://x-callback-url/quickCapture?page=${page}&append=${append}&title=${
-      tab.title
-    }&content=${result ? result : ""}&url=${encodeURIComponent(tab.url)}`;
+    url = `logseq://x-callback-url/quickCapture?page=${page}&append=${append}&title=${encodeURIComponent(
+      tab.title,
+    )}&content=${result ? result : ""}&url=${encodeURIComponent(tab.url)}`;
   }
 
   window.open(url);
