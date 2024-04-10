@@ -1112,7 +1112,7 @@
       tab.title,
     )}&content=${result ? result : ""}&url=${encodeURIComponent(tab.url)}`;
   } else {
-    url = `logseq://x-callback-url/quickCapture?page=${page}&append=${append}&title=${encodeURIComponent(
+    url = `logseq://x-callback-url/quickCapture?page=${encodeURIComponent(page)}&append=${append}&title=${encodeURIComponent(
       tab.title,
     )}&content=${result ? result : ""}&url=${encodeURIComponent(tab.url)}`;
   }

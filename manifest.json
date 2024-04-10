@@ -1,6 +1,6 @@
 {
   "name": "Logseq Quick Capture",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Quick capture for Logseq",
   "icons": {
     "16": "icons/icon16.png",
@@ -15,9 +15,5 @@
     "default_title": "Logseq Quick Capture"
   },
   "options_page": "src/options.html",
-  "permissions": [
-    "scripting",
-    "activeTab",
-    "storage"
-  ]
+  "permissions": ["scripting", "activeTab", "storage"]
 }
