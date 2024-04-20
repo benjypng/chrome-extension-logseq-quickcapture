@@ -1105,11 +1105,11 @@ function main() {
     if (page === "cursor") {
       url = `logseq://x-callback-url/quickCapture?page=""&append=false&title=${encodeURIComponent(
         tab.title,
-      )}&content=${encodeURIComponent(result)}&url=${encodeURIComponent(tab.url)}`;
+      )}&content=${encodeURIComponent(result ? result : "")}&url=${encodeURIComponent(tab.url)}`;
     } else {
       url = `logseq://x-callback-url/quickCapture?page=${page}&append=${append}&title=${encodeURIComponent(
         tab.title,
-      )}&content=${encodeURIComponent(result)}&url=${encodeURIComponent(tab.url)}`;
+      )}&content=${encodeURIComponent(result ? result : "")}&url=${encodeURIComponent(tab.url)}`;
     }
     return url;
   }
