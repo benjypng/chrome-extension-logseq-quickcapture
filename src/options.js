@@ -1,38 +1,40 @@
-// Saves options to chrome.storage
-function save_options() {
+const save_options = async (e) => {
+  e.preventDefault();
   const page = document.getElementById("page").value;
   const append = document.getElementById("append").value;
 
-  chrome.storage.sync.set(
-    {
-      page: page,
-      append: append,
-    },
-    function () {
-      // Update status to let user know options were saved.
-      const status = document.getElementById("save");
-      status.textContent = "Options Saved";
-      setTimeout(function () {
-        status.textContent = "Save";
-      }, 750);
-    }
-  );
-}
+  try {
+    await chrome.storage.sync.set({ page, append });
+    // Update status to let user know options were saved.
+    const saveButton = document.getElementById("save");
+    const originalText = saveButton.textContent;
+    saveButton.textContent = "Options Saved!";
+    saveButton.disabled = true;
+    setTimeout(() => {
+      saveButton.textContent = originalText;
+      saveButton.disabled = false;
+    }, 750);
+  } catch (error) {
+    console.error("Error saving options:", error);
+  }
+};
 
-// Restores select box and checkbox state using the preferences
-// stored in chrome.storage.
-function restore_options() {
-  chrome.storage.sync.get(
-    {
-      page: "TODAY",
-      append: "true",
-    },
-    function (items) {
-      document.getElementById("page").value = items.page;
-      document.getElementById("append").value = items.append;
-    }
-  );
-}
+const restore_options = async () => {
+  const defaultOptions = {
+    page: "TODAY",
+    append: "true",
+  };
+
+  try {
+    const items = await chrome.storage.sync.get(defaultOptions);
+    document.getElementById("page").value = items.page;
+    document.getElementById("append").value = items.append;
+  } catch (error) {
+    console.error("Error restoring options:", error);
+  }
+};
 
 document.addEventListener("DOMContentLoaded", restore_options);
-document.getElementById("save").addEventListener("click", save_options);
+document
+  .getElementById("options-form")
+  .addEventListener("submit", save_options);
