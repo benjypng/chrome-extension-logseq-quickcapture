@@ -14,42 +14,40 @@
   <body>
     <div class="container p-4">
       <h1 class="mb-4">Quick Capture Options (Logseq v0.8.12 onwards)</h1>
-      <form id="options-form">
-        <div class="mb-3">
-          <label for="page" class="form-label">
-            <h5>Send Quick Capture To:</h5>
-          </label>
-          <input type="text" id="page" class="form-control" value="TODAY">
-          <p class="form-text">Indicate where you want to send your quick capture item to.</p>
-          <ul>
-            <li><code>TODAY</code> : Send to today's page</li>
-            <li><code>cursor</code> : Send to wherever your cursor is</li>
-            <li>
-              <code>{page name}</code> : If a valid page name is indicated, it
-              will be sent to that specific page
-            </li>
-          </ul>
-        </div>
-        <hr />
-        <div class="mb-3">
-          <label for="append" class="form-label">
-            <h5>Append to end of page?</h5>
-          </label>
-          <select id="append" class="form-select">
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-          </select>
-          <p class="form-text">
-            This option is ignored if you select <code>cursor</code> in the above
-            option.
-          </p>
-        </div>
-        <div>
-          <button id="save" type="submit" class="btn btn-primary">
-            Save
-          </button>
-        </div>
-      </form>
+      <div class="mb-3">
+        <label for="page" class="form-label">
+          <h5>Send Quick Capture To:</h5>
+        </label>
+        <input type="text" id="page" class="form-control" value="TODAY">
+        <p class="form-text">Indicate where you want to send your quick capture item to.</p>
+        <ul>
+          <li><code>TODAY</code> : Send to today's page</li>
+          <li><code>cursor</code> : Send to wherever your cursor is</li>
+          <li>
+            <code>{page name}</code> : If a valid page name is indicated, it
+            will be sent to that specific page
+          </li>
+        </ul>
+      </div>
+      <hr />
+      <div class="mb-3">
+        <label for="append" class="form-label">
+          <h5>Append to end of page?</h5>
+        </label>
+        <select id="append" class="form-select">
+          <option value="true">Yes</option>
+          <option value="false">No</option>
+        </select>
+        <p class="form-text">
+          This option is ignored if you select <code>cursor</code> in the above
+          option.
+        </p>
+      </div>
+      <div>
+        <button id="save" type="button" class="btn btn-primary">
+          Save
+        </button>
+      </div>
     </div>
     <script src="options.js"></script>
   </body>

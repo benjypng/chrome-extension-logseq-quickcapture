@@ -1,5 +1,4 @@
-const save_options = async (e) => {
-  e.preventDefault();
+const save_options = async () => {
   const page = document.getElementById("page").value;
   const append = document.getElementById("append").value;
 
@@ -35,6 +34,4 @@ const restore_options = async () => {
 };
 
 document.addEventListener("DOMContentLoaded", restore_options);
-document
-  .getElementById("options-form")
-  .addEventListener("submit", save_options);
+document.getElementById("save").addEventListener("click", save_options);
