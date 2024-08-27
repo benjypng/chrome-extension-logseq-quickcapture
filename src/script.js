@@ -33,12 +33,12 @@ const main = async () => {
 
   const url = await buildURL();
   const tab = await chrome.tabs.create({
-    active: true,
+    active: false,
     url,
   });
   setTimeout(async () => {
     await chrome.tabs.remove(tab.id);
-  }, 1000);
+  }, 6000);
 };
 
 main();

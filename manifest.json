@@ -1,6 +1,6 @@
 {
   "name": "Logseq Quick Capture",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "Quick capture from Chrome to Logseq",
   "icons": {
     "16": "icons/icon16.png",
