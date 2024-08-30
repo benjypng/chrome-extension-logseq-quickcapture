@@ -1,4 +1,4 @@
-const main = async () => {
+const main = () => {
   const getCurrentTab = async () => {
     let [tab] = await chrome.tabs.query({
       active: true,
@@ -31,14 +31,9 @@ const main = async () => {
     return url;
   };
 
-  const url = await buildURL();
-  const tab = await chrome.tabs.create({
-    active: false,
-    url,
+  buildURL().then((url) => {
+    window.open(url);
   });
-  setTimeout(async () => {
-    await chrome.tabs.remove(tab.id);
-  }, 6000);
 };
 
 main();
